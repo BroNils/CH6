@@ -1,0 +1,671 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Binar Challenge 05",
+    "description": "Binar Challenge 05 - API Documentation"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "tags": [],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [],
+        "description": "Login controller",
+        "parameters": [
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to login.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_games": {
+      "get": {
+        "tags": [],
+        "description": "Get all user game data",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "Create new user game data",
+        "parameters": [
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to create.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGame"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_games/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Get user game data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "description": "Update user game data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGame"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "Update user game data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGame"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "Delete user game data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_game_biodatas": {
+      "get": {
+        "tags": [],
+        "description": "Get all user game biodata data",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "Create new user game biodata data",
+        "parameters": [
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to create.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameBiodata"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_game_biodatas/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Get user game biodata data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "description": "Update user game biodata data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameBiodata"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "Update user game biodata data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameBiodata"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "Delete user game biodata data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_game_histories": {
+      "get": {
+        "tags": [],
+        "description": "Get all user game history data",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "Create new user game history data",
+        "parameters": [
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to create.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameHistory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    },
+    "/user_game_histories/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Get user game history data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "description": "Update user game history data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameHistory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "patch": {
+        "tags": [],
+        "description": "Update user game history data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "200",
+            "in": "body",
+            "description": "Data to update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserGameHistory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "Delete user game history data with id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BasicResponse": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "boolean",
+          "example": false
+        },
+        "message": {
+          "type": "string",
+          "example": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      }
+    },
+    "Login": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "admin"
+        },
+        "password": {
+          "type": "string",
+          "example": "admin"
+        }
+      }
+    },
+    "UserGame": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "string"
+        },
+        "email": {
+          "type": "string",
+          "example": "string"
+        },
+        "password": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "UserGameBiodata": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "number",
+          "example": 1
+        },
+        "first_name": {
+          "type": "string",
+          "example": "string"
+        },
+        "last_name": {
+          "type": "string",
+          "example": "string"
+        },
+        "age": {
+          "type": "number",
+          "example": 1
+        },
+        "about": {
+          "type": "string",
+          "example": "string"
+        }
+      }
+    },
+    "UserGameHistory": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "number",
+          "example": 1
+        },
+        "game": {
+          "type": "string",
+          "example": "string"
+        },
+        "score": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    }
+  }
+}
