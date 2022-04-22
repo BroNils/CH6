@@ -6,6 +6,7 @@ var rootController = path.join(process.env.ROOT_PATH, '/controllers/web');
 /**
  * Load web controllers
  */
+var logoutHandler = require(path.join(rootController, '/logout'));
 var dashboardHandler = require(path.join(rootController, '/dashboard.js'));
 var indexHandler = require(path.join(rootController, '/home.js'));
 var userGameHandler = require(path.join(rootController, '/user_game'));
@@ -26,6 +27,8 @@ router.get('/delete_user_game_biodata', userGameBiodataHandler.delete);
 router.get('/update_user_game_biodata', userGameBiodataHandler.update);
 
 router.get('/dashboard', dashboardHandler);
+
+router.get('/logout', logoutHandler);
 
 /* GET home page. */
 router.get('/', indexHandler);
