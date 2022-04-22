@@ -10,6 +10,14 @@ const prisma = new PrismaClient()
  * @param {import('express').NextFunction} next
  */
 async function controller(req, res, next) {
+  if(!req.authorized) {
+    return res.status(401).json({
+      error: true,
+      message: 'Unauthorized',
+      data: [],
+    });
+  }
+
   const data = await prisma.user_game_history.findMany().catch(err => {
     return {
       error: true,
@@ -33,7 +41,7 @@ async function controller(req, res, next) {
   res.json({
     error: false,
     message: 'Success',
-    data: [data],
+    data,
   })
 }
 

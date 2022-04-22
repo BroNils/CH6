@@ -5,7 +5,7 @@ require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
 
 // load dependencies
 var express = require('express');
-var cors = require('cors')
+var cors = require('cors');
 var path = require('path');
 var middlewares = require(path.join(process.env.ROOT_PATH, './middlewares'));
 var swaggerUi = require('swagger-ui-express');

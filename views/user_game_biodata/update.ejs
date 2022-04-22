@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@2.6.6")
+  -->
+
+  <head>
+    <title><%- title %></title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Binar Challenge 05">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+
+    <link href="css/font.css" rel="stylesheet" type="text/css">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/quasar.rtl.prod.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- example of injection point where you write your app template -->
+    <div id="q-app">
+      <q-layout view="hhh lpr fff">
+
+        <q-page-container>
+          <q-page class="flex flex-center column">
+            <q-card class="custom-card">
+              <q-card-section>
+                <q-form
+                  @submit="onSubmit"
+                  class="flex column q-gutter-md"
+                >
+
+                  <q-input
+                    filled
+                    v-model="id"
+                    placeholder="id"
+                    :disable="disabled"
+                    type="number"
+                  >
+                  </q-input>
+
+                  <q-input
+                    filled
+                    v-model="user_id"
+                    placeholder="user_id"
+                    :disable="disabled"
+                    type="number"
+                  >
+                  </q-input>
+
+                  <q-input
+                    filled
+                    v-model="first_name"
+                    placeholder="first_name"
+                    :disable="disabled"
+                  >
+                  </q-input>
+
+                  <q-input
+                    filled
+                    v-model="last_name"
+                    placeholder="last_name"
+                    :disable="disabled"
+                  >
+                  </q-input>
+
+                  <q-input
+                    filled
+                    v-model="about"
+                    placeholder="about"
+                    :disable="disabled"
+                  >
+                  </q-input>
+
+                  <q-input
+                    filled
+                    v-model="age"
+                    placeholder="age"
+                    :disable="disabled"
+                    type="number"
+                  >
+                  </q-input>
+
+                  <div>
+                    <q-btn
+                      label="Update"
+                      type="submit"
+                      color="primary"
+                      :disable="disabled"
+                    >
+                    </q-btn>
+                    <q-space></q-space>
+                    <span
+                      v-if="msg"
+                    >
+                      {{ msg }}
+                    </span>
+                  </div>
+                </q-form>
+              </q-card-section>
+            </q-card>
+          </q-page>
+        </q-page-container>
+
+      </q-layout>
+    </div>
+
+    <!-- Add the following at the end of your body tag -->
+    <script src="js/vue.global.prod.js"></script>
+    <script src="js/quasar.umd.prod.js"></script>
+    <script src="js/svg-mdi-v6.umd.prod.js"></script>
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      /*
+        Example kicking off the UI. Obviously, adapt this to your specific needs.
+        Assumes you have a <div id="q-app"></div> in your <body> above
+       */
+      const app = Vue.createApp({
+        setup () {
+          if(!Quasar.LocalStorage.has('token')){
+            window.location.href = '/';
+            return;
+          }
+
+          const id = Vue.ref(null)
+          const user_id = Vue.ref(null)
+          const first_name = Vue.ref('')
+          const last_name = Vue.ref('')
+          const about = Vue.ref('')
+          const age = Vue.ref(null)
+          const msg = Vue.ref('')
+          const disabled = Vue.ref(false)
+
+          function onSubmit(evt){
+            disabled.value = true
+
+            axios
+            .put('/api/user_game_biodatas/'+id.value, {
+              user_id: user_id.value,
+              first_name: first_name.value,
+              last_name: last_name.value,
+              about: about.value,
+              age: age.value
+            }, {
+              headers: {
+                'token': Quasar.LocalStorage.getItem('token')
+              }
+            })
+            .then((response) => {
+              if(response.data){
+                msg.value = response.data.message;
+              }
+
+              disabled.value = false
+            })
+            .catch((error) => {
+              disabled.value = false
+              msg.value = error.toString();
+            })
+          }
+
+          return {
+            id,
+            user_id,
+            first_name,
+            last_name,
+            about,
+            age,
+            disabled,
+            msg,
+            onSubmit
+          }
+        }
+      })
+
+      app.use(Quasar, {
+        config: {
+          /*
+          brand: {
+            // primary: '#e46262',
+            // ... or all other brand colors
+          },
+          notify: {...}, // default set of options for Notify Quasar plugin
+          loading: {...}, // default set of options for Loading Quasar plugin
+          loadingBar: { ... }, // settings for LoadingBar Quasar plugin
+          // ..and many more (check Installation card on each Quasar component/directive/plugin)
+          */
+        }
+      })
+      Quasar.iconSet.set(Quasar.iconSet.svgMdiV6)
+      app.mount('#q-app')
+    </script>
+  </body>
+</html>

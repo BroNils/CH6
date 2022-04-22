@@ -43,6 +43,14 @@ const doc = {
       score: 1,
     }
   },
+  securityDefinitions: {
+    token: {
+      type: "apiKey",
+      name: "token",
+      in: "header",
+      description: "A valid token is required to access some resource",
+    }
+  },
 };
 
 const outputFile = "./swagger-output.json";

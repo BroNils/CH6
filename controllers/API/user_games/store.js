@@ -10,6 +10,14 @@ const prisma = new PrismaClient()
  * @param {import('express').NextFunction} next
  */
 async function controller(req, res, next) {
+  if(!req.authorized) {
+    return res.status(401).json({
+      error: true,
+      message: 'Unauthorized',
+      data: [],
+    });
+  }
+
   if(!req.body.username || !req.body.password || !req.body.email) {
     return res.json({
       error: true,
