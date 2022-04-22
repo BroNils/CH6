@@ -1,5 +1,8 @@
 .git-credentials
 
+# prisma generated model
+models/pgclient
+
 # Logs
 logs
 *.log

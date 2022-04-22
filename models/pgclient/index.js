@@ -135,7 +135,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\my proj\\organization\\binar\\challenge\\challenge-05\\models\\pgclient",
+      "value": "D:\\my proj\\organization\\binar\\c5\\models\\pgclient",
       "fromEnvVar": null
     },
     "config": {
