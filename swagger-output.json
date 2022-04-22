@@ -12,6 +12,14 @@
     "http",
     "https"
   ],
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "name": "token",
+      "in": "header",
+      "description": "A valid token is required to access some resource"
+    }
+  },
   "consumes": [
     "application/json",
     "application/x-www-form-urlencoded"
@@ -26,7 +34,7 @@
         "description": "Login controller",
         "parameters": [
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to login.",
             "required": true,
@@ -51,6 +59,38 @@
         }
       }
     },
+    "/logout": {
+      "post": {
+        "tags": [],
+        "description": "Logout controller",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Successfully done."
+          },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
+          "500": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
     "/user_games": {
       "get": {
         "tags": [],
@@ -63,20 +103,31 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "post": {
         "tags": [],
         "description": "Create new user game data",
         "parameters": [
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to create.",
             "required": true,
@@ -92,13 +143,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     },
     "/user_games/{id}": {
@@ -120,13 +182,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "put": {
         "tags": [],
@@ -139,7 +212,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -155,13 +228,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "patch": {
         "tags": [],
@@ -174,7 +258,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -190,13 +274,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "delete": {
         "tags": [],
@@ -216,13 +311,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     },
     "/user_game_biodatas": {
@@ -237,20 +343,31 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "post": {
         "tags": [],
         "description": "Create new user game biodata data",
         "parameters": [
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to create.",
             "required": true,
@@ -266,13 +383,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     },
     "/user_game_biodatas/{id}": {
@@ -294,13 +422,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "put": {
         "tags": [],
@@ -313,7 +452,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -329,13 +468,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "patch": {
         "tags": [],
@@ -348,7 +498,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -364,13 +514,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "delete": {
         "tags": [],
@@ -390,13 +551,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     },
     "/user_game_histories": {
@@ -411,20 +583,31 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "post": {
         "tags": [],
         "description": "Create new user game history data",
         "parameters": [
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to create.",
             "required": true,
@@ -440,13 +623,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     },
     "/user_game_histories/{id}": {
@@ -468,13 +662,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "put": {
         "tags": [],
@@ -487,7 +692,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -503,13 +708,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "patch": {
         "tags": [],
@@ -522,7 +738,7 @@
             "type": "string"
           },
           {
-            "name": "200",
+            "name": "body",
             "in": "body",
             "description": "Data to update.",
             "required": true,
@@ -538,13 +754,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       },
       "delete": {
         "tags": [],
@@ -564,13 +791,24 @@
             },
             "description": "Successfully done."
           },
+          "401": {
+            "schema": {
+              "$ref": "#/definitions/BasicResponse"
+            },
+            "description": "Internal error."
+          },
           "500": {
             "schema": {
               "$ref": "#/definitions/BasicResponse"
             },
             "description": "Internal error."
           }
-        }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
       }
     }
   },

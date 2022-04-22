@@ -8,6 +8,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model session {
+  id                Int                 @id @default(autoincrement())
+  token             String              @unique @db.VarChar(255)
+  created_at        DateTime            @db.Timestamptz(6) @default(now())
+}
+
 model user_game {
   id                Int                 @id @default(autoincrement())
   username          String              @unique @db.VarChar(255)
@@ -32,6 +38,6 @@ model user_game_history {
   user_id    Int
   game       String    @db.VarChar(255)
   score      Int
-  created_at DateTime  @db.Timestamptz(6)
+  created_at DateTime  @db.Timestamptz(6) @default(now())
   user_game  user_game @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
