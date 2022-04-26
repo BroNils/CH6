@@ -1,8 +1,13 @@
+process.env.ROOT_PATH = __dirname;
+
+// load environment variables from .env file
+require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
+
 const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    version: "1.0.0",
+    version: "1.0.1",
     title: "Binar Challenge 05",
     description:
       "Binar Challenge 05 - API Documentation",

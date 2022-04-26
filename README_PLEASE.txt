@@ -11,8 +11,6 @@ Instruction before running / start this project:
 2f) Installation will take a while, so please be patient.
 2g) Make sure Installation is successful or done properly.
 3) Then you can run with run.bat (double click it like executable), OR you can just do `npm start`
-4) I know it's bad to not answer while in class, but I really don't understand ejs (i usually use SPA, not SSR) and please forgive me
-5) So again, please forgive me and thanks for giving us a chance to learn
 
 Design Pattern: MVC with Router and auto-generated Models
 Folder Structure:
