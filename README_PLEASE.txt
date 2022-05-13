@@ -30,6 +30,17 @@ Instruction before using gitlab CI/CD:
 2f) POSTGRES_PASSWORD=randompassword
 3) Done, you can now push your code to gitlab and CI/CD runner will run without any problem
 
+Instruction before using github CI/CD:
+1) Go to github repo settings -> Secrets -> Actions
+2) Add these variables (key=value)
+2a) DATABASE_URL=postgresql://randomuser:randompassword@postgres:5432/mydb?schema=public
+2b) HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
+2c) HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
+2d) POSTGRES_DB=mydb
+2e) POSTGRES_USER=randomuser
+2f) POSTGRES_PASSWORD=randompassword
+3) Done, you can now push your code to gitlab and CI/CD runner will run without any problem
+
 Design Pattern: MVC with Router and auto-generated Models
 Folder Structure:
   - root (this folder)

@@ -1,6 +1,49 @@
 # Epress
 
-ExpressJS boilerplate
+ExpressJS boilerplate (modified and created by myself)
+
+# Instruction before running / start this project
+
+1. Before installing, please specify database url in .env file. OR you can use mine but you need internet connections
+2. Install all required things, use install.bat (double click it like executable)
+    - OR you can just run these command below (sequentially)
+    - `npm i --production=false`
+    - `npx prisma migrate reset --schema=./models/schema.prisma -f`
+    - `npx prisma db pull --schema=./models/schema.prisma`
+    - `npx prisma generate --schema=./models/schema.prisma`
+    - Installation will take a while, so please be patient.
+    - Make sure Installation is successful or done properly.
+3. Then you can run with run.bat (double click it like executable), OR you can just do `npm start`
+
+# Instruction before doing unit test
+1. Install all required things, follow the instruction above
+2. Open unit-test.bat (double click it like executable)
+    - OR you can just run these command below
+    - `npx jest --runTestsByPath=tests`
+3. Unit test will take a while, so please be patient.
+
+# Instruction before using gitlab CI/CD
+1. Go to gitlab project settings -> CI/CD
+2. Expand variables -> Add variables, and add these variables (key=value)
+    - DATABASE_URL=postgresql://randomuser:randompassword@postgres:5432/mydb?schema=public
+    - HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
+    - HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
+    - POSTGRES_DB=mydb
+    - POSTGRES_USER=randomuser
+    - POSTGRES_PASSWORD=randompassword
+3. Done, you can now push your code to gitlab and CI/CD runner will run without any problem
+
+# Instruction before using github CI/CD
+1. Go to github repo settings -> Secrets -> Actions
+2. Add these variables (key=value)
+    - DATABASE_URL=postgresql://randomuser:randompassword@postgres:5432/mydb?schema=public
+    - HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
+    - HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
+    - POSTGRES_DB=mydb
+    - POSTGRES_USER=randomuser
+    - POSTGRES_PASSWORD=randompassword
+3. Done, you can now push your code to gitlab and CI/CD runner will run without any problem
+
 
 # Design Pattern
 
