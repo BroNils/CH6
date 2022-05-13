@@ -30,7 +30,7 @@ async function controller(req, res, next) {
     return res.status(500).json(data)
   }
 
-  if(!data) {
+  if(!data || data.length === 0) {
     return res.json({
       error: true,
       message: 'No user history found',
