@@ -1,12 +1,13 @@
 const request = require("supertest");
 const app = require("../app");
+
 const JEST_TIMEOUT = 30000;
-const ROOT_API = process.env.ROOT_PATH;
+const ROOT_API = process.env.ROOT_PATH + "/./tests/API/";
 
 // load test file
-const login = require(process.env.ROOT_PATH + "./login.test");
-const logout = require(process.env.ROOT_PATH + "./logout.test");
-const nf = require(process.env.ROOT_PATH + "./nf.test");
+const login = require(ROOT_API + "./login.test");
+const logout = require(ROOT_API + "./logout.test");
+const nf = require(ROOT_API + "./nf.test");
 
 describe("API Scope Testing", () => {
   login(app, request, JEST_TIMEOUT);
