@@ -1,3 +1,9 @@
+// load environment variables from .env file
+if (!process.env.LOADED_ENV) {
+  process.env.ROOT_PATH = __dirname;
+  require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
+}
+
 // load dependencies
 var express = require('express');
 var cors = require('cors');

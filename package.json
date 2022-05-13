@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "author": "GoogleX",
   "private": true,
+  "jest": {
+    "testPathIgnorePatterns": ["API"]
+  },
   "scripts": {
     "start": "node swagger.js",
     "start-heroku": "npx prisma migrate reset --schema=./models/schema.prisma -f && npx prisma db pull --schema=./models/schema.prisma && npx prisma generate --schema=./models/schema.prisma && node swagger.js",
@@ -23,10 +26,14 @@
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/inquirer": "^8.2.1",
+    "@types/jest": "^27.5.1",
+    "@types/supertest": "^2.0.12",
     "@types/swagger-ui-express": "^4.1.3",
     "dotenv-stringify": "^2.0.6",
     "inquirer": "^8.2.2",
+    "jest": "^28.1.0",
     "prisma": "^3.12.0",
+    "supertest": "^6.2.3",
     "swagger-autogen": "^2.12.3"
   },
   "engines": {

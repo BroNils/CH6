@@ -1,7 +1,8 @@
-process.env.ROOT_PATH = __dirname;
-
 // load environment variables from .env file
-require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
+if (!process.env.LOADED_ENV) {
+  process.env.ROOT_PATH = __dirname;
+  require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
+}
 
 const swaggerAutogen = require("swagger-autogen")();
 
@@ -64,29 +65,3 @@ const endpointsFiles = ["./routes/api.js"];
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
   require("./bin/www");
 });
-
-/**
- * User: {
-      name: "Jhon Doe",
-      age: 29,
-      parents: {
-        $ref: "#/definitions/Parents",
-      },
-      diplomas: [
-        {
-          school: "XYZ University",
-          year: 2020,
-          completed: true,
-          internship: {
-            hours: 290,
-            location: "XYZ Company",
-          },
-        },
-      ],
-    },
-    AddUser: {
-      $name: "Jhon Doe",
-      $age: 29,
-      about: "",
-    },
- */
