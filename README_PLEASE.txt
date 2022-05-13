@@ -12,6 +12,24 @@ Instruction before running / start this project:
 2g) Make sure Installation is successful or done properly.
 3) Then you can run with run.bat (double click it like executable), OR you can just do `npm start`
 
+Instruction before doing unit test:
+1) Install all required things, follow the instruction above
+2) Open unit-test.bat (double click it like executable)
+2a) OR you can just run these command below
+2b) `npx jest --runTestsByPath=tests`
+3) Unit test will take a while, so please be patient.
+
+Instruction before using gitlab CI/CD:
+1) Go to gitlab project settings -> CI/CD
+2) Expand variables -> Add variables, and add these variables (key=value)
+2a) DATABASE_URL=postgresql://randomuser:randompassword@postgres:5432/mydb?schema=public
+2b) HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
+2c) HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
+2d) POSTGRES_DB=mydb
+2e) POSTGRES_USER=randomuser
+2f) POSTGRES_PASSWORD=randompassword
+3) Done, you can now push your code to gitlab and CI/CD runner will run without any problem
+
 Design Pattern: MVC with Router and auto-generated Models
 Folder Structure:
   - root (this folder)
