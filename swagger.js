@@ -9,9 +9,9 @@ const swaggerAutogen = require("swagger-autogen")();
 const doc = {
   info: {
     version: "1.0.1",
-    title: "Binar Challenge 05",
+    title: "Binar Challenge 06",
     description:
-      "Binar Challenge 05 - API Documentation",
+      "Binar Challenge 06 - API Documentation",
   },
   host: "localhost:3000",
   basePath: "/api",
