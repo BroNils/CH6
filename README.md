@@ -36,7 +36,7 @@ ExpressJS boilerplate (modified and created by myself)
 # Instruction before using github CI/CD
 1. Go to github repo settings -> Secrets -> Actions
 2. Add these variables (key=value)
-    - DATABASE_URL=postgresql://randomuser:randompassword@postgres:5432/mydb?schema=public
+    - DATABASE_URL=postgresql://randomuser:randompassword@localhost:5432/mydb?schema=public
     - HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
     - HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
     - POSTGRES_DB=mydb
