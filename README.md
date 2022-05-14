@@ -8,7 +8,7 @@ ExpressJS boilerplate (modified and created by myself)
 
 # Instruction before running / start this project
 
-1. Before installing, please specify database url in .env file. OR you can use mine but you need internet connections
+1. Before installing, please specify database url in .env file (example env file on .env.example)
 2. Install all required things, use install.bat (double click it like executable)
     - OR you can just run these command below (sequentially)
     - `npm i --production=false`
