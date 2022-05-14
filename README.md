@@ -39,6 +39,7 @@ ExpressJS boilerplate (modified and created by myself)
     - DATABASE_URL=postgresql://randomuser:randompassword@localhost:5432/mydb?schema=public
     - HEROKU_API_KEY=REPLACE_WITH_YOUR_KEY
     - HEROKU_APP_NAME=REPLACE_WITH_YOUR_APP_NAME
+    - HEROKU_EMAIL=REPLACE_WITH_YOUR_EMAIL
     - POSTGRES_DB=mydb
     - POSTGRES_USER=randomuser
     - POSTGRES_PASSWORD=randompassword
