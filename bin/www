@@ -2,7 +2,7 @@
 
 // load environment variables from .env file
 if (!process.env.LOADED_ENV) {
-  process.env.ROOT_PATH = __dirname;
+  process.env.ROOT_PATH = require('path').join(__dirname, '..');
   require('dotenv').config({ path: process.env.ROOT_PATH + '/.env' });
 }
 
