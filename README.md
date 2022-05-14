@@ -17,10 +17,11 @@ ExpressJS boilerplate (modified and created by myself)
 
 # Instruction before doing unit test
 1. Install all required things, follow the instruction above
-2. Open unit-test.bat (double click it like executable)
+2. Open deploy-migration.bat to reset all data inside database
+3. Open unit-test.bat (double click it like executable)
     - OR you can just run these command below
     - `npx jest --runTestsByPath=tests`
-3. Unit test will take a while, so please be patient.
+4. Unit test will take a while, so please be patient.
 
 # Instruction before using gitlab CI/CD
 1. Go to gitlab project settings -> CI/CD

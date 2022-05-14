@@ -14,10 +14,11 @@ Instruction before running / start this project:
 
 Instruction before doing unit test:
 1) Install all required things, follow the instruction above
-2) Open unit-test.bat (double click it like executable)
-2a) OR you can just run these command below
-2b) `npx jest --runTestsByPath=tests`
-3) Unit test will take a while, so please be patient.
+2) Open deploy-migration.bat to reset all data inside database
+3) Open unit-test.bat (double click it like executable)
+3a) OR you can just run these command below
+3b) `npx jest --runTestsByPath=tests`
+4) Unit test will take a while, so please be patient.
 
 Instruction before using gitlab CI/CD:
 1) Go to gitlab project settings -> CI/CD
