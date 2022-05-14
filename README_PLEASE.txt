@@ -42,6 +42,8 @@ Instruction before using github CI/CD:
 2f) POSTGRES_PASSWORD=randompassword
 3) Done, you can now push your code to gitlab and CI/CD runner will run without any problem
 
+Demo App: https://aabbbccccc.herokuapp.com/
+
 Design Pattern: MVC with Router and auto-generated Models
 Folder Structure:
   - root (this folder)

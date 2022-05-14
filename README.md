@@ -2,6 +2,10 @@
 
 ExpressJS boilerplate (modified and created by myself)
 
+# Demo
+
+[On Heroku](https://aabbbccccc.herokuapp.com/)
+
 # Instruction before running / start this project
 
 1. Before installing, please specify database url in .env file. OR you can use mine but you need internet connections
